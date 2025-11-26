@@ -32,7 +32,11 @@
 
 Проект развёрнут на облочном сервисе AMVERA. Можно делать запросы к нему по этому URL: http://apisendemail-oribon.amvera.io
 
+Будет доступен 2 месяц с 26.11.2025
+
 -Примеры запросов
+
+Остальные примеры запросов можно посмотреть по URL: https://apisendemail-oribon.amvera.io./doc/
 
 POST http://apisendemail-oribon.amvera.io/sendEmail/bcc
 {
