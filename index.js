@@ -4,6 +4,8 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const port = process.env.PORT;
+const swaggerUi = require("swagger-ui-express");
+const swaggerFile = require("./swagger_output.json");
 
 app.use(express.json());
 
@@ -16,6 +18,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
+
+app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 const transporterBase = nodemailer.createTransport({
     host: "smtp.yandex.ru",

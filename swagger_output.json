@@ -1,0 +1,154 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "REST API",
+        "description": ""
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "schemes": ["http"],
+    "paths": {
+        "/sendEmail": {
+            "post": {
+                "description": "Отправка письма с темой и текстом.",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "toEmail": {
+                                    "example": "example@example.ru"
+                                },
+                                "subject": {
+                                    "example": "Test"
+                                },
+                                "text": {
+                                    "example": "Testin right now"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/sendEmail/cc": {
+            "post": {
+                "description": "Отправка письма с темой и текстом. Также поле для указание почты для отправки копии",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "toEmail": {
+                                    "example": "example@example.ru"
+                                },
+                                "subject": {
+                                    "example": "Test"
+                                },
+                                "text": {
+                                    "example": "Testin right now"
+                                },
+                                "copyEmail": {
+                                    "example": "example1@example1.com"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/sendEmail/bcc": {
+            "post": {
+                "description": "Отправка письма с темой и текстом. Также поле для указание почты для отправки скрытой копии",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "toEmail": {
+                                    "example": "example@example.ru"
+                                },
+                                "subject": {
+                                    "example": "Test"
+                                },
+                                "text": {
+                                    "example": "Testin right now"
+                                },
+                                "copyEmail": {
+                                    "example": "example1@example1.com"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/sendEmail/html": {
+            "post": {
+                "description": "Отправка письма с темой, текстом и html кодом",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "toEmail": {
+                                    "example": "example@example.ru"
+                                },
+                                "subject": {
+                                    "example": "Test"
+                                },
+                                "text": {
+                                    "example": "Testin right now"
+                                },
+                                "html": {
+                                    "example": "<div style='color:blue'> Hello world </div>"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    }
+}
