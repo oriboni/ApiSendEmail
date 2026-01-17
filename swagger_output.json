@@ -5,7 +5,7 @@
         "title": "REST API",
         "description": ""
     },
-    "host": "localhost:3000",
+    "host": "https://apisendemail-oribon.amvera.io",
     "basePath": "/",
     "schemes": ["http"],
     "paths": {
